@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Selection</title>
+
+  <style>
+ body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #E5F9DB
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #2b2d42;
+  color: #fff;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #FFC107;
+}
+
+.header {
+  background-color: #2b2d42;
+  color: #fff;
+  padding: 20px;
+}
+
+.menu {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+
+.meal {
+  margin-bottom: 40px;
+}
+
+.meal h3 {
+  margin-top: 0;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.item:hover img {
+  transform: scale(1.1);
+}
+
+.item-info {
+  padding: 10px;
+  background-color: #A2A378;
+}
+
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.item-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.item-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.item-checkbox input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+input[type=submit] {
+  background-color: #2b2d42;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-up {
+  animation: scale-up 0.5s ease-in-out forwards;
+}
+
+ .done-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .done-button button {
+    background-color: #2b2d42;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .done-button button:hover {
+    background-color: #fff;
+    color: #2b2d42;
+    border: 2px solid #2b2d42;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .done-button {
+      margin-top: 20px;
+    }
+
+    .done-button button {
+      padding: 5px 10px;
+    }
+  }
+@media only screen and (max-width: 600px) {
+  .meal {
+    margin-bottom: 20px;
+  }
+
+  .item {
+    width: calc(50% - 10px);
+  }
+
+  input[type=submit] {
+    padding: 5px 10px;
+  }
+}
+input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  text-align: center;
+}
+.breakfast {
+    font-size: 4em;
+    color: #83764F;
+    text-align: center;
+    margin-top: 50px;
+  }
+.containerxx {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-div {
+  order: 1; /* Change the order to 2 if you want the right div to come first visually */
+}
+
+.right-div {
+  order: 2; /* Change the order to 1 if you want the right div to come first visually */
+}
+
+
+
+/* CSS */
+
+.button-container {
+  display: flex;
+}
+
+.buttons {
+  flex: 1;
+  margin-right: 10px;
+  width: 180px;
+
+    background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.buttons:hover,
+.buttons:focus {
+  opacity: .75;
+}
+.buttons:last-child {
+  margin-right: 0;
+}
+
+.form-container {
+  display: flex;
+}
+
+form {
+  flex: 1;
+  margin-right: 10px;
+}
+
+form:last-child {
+  margin-right: 0;
+}
+
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <ul>
+      <li><a href="{{url_for('menu')}}">Home</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="{{url_for('get_bill')}}">Get Bill</a></li>
+      <li><a href="{{url_for('about_us')}}">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="containerxx">
+  <div class="left-div"style=" font-size: 1.5em;
+    color: #333333;
+    left: 10px;
+text-align: left;
+position: relative;
+    margin-top: 20px;">
+    {% if menu_cat == 'mbf' %}
+    Good Morning, {{username}}!
+    {% elif menu_cat == 'ebf' %}
+    Good Evening, {{username}}!
+   {% elif menu_cat == 'dinner' %}
+    Good Evening, {{username}}!
+  {% elif menu_cat == 'lunch' %}
+    Good Afternoon, {{username}}!
+   {% endif %}
+  </div>
+
+
+
+  <div class="right-div" style=" font-size: 1.5em;
+    color: #333333;
+    right: 10px;
+text-align: left;
+position: relative;
+    margin-top: 20px;">{{day_month_year}}</div>
+</div>
+
+  {% if menu_cat == 'mbf' %}
+  <div class="breakfast">Morning Breakfast</div>
+  {% elif menu_cat == 'ebf' %}
+  <div class="breakfast">Evening Breakfast</div>
+
+  {% elif menu_cat == 'dinner' %}
+  <div class="breakfast">Dinner</div>
+
+  {% elif menu_cat == 'lunch' %}
+  <div class="breakfast">Lunch</div>
+  {% else %}
+  <div></div>
+
+  {% endif %}
+  <!-- HTML !--><div class="form-container">
+  <form action="{{ url_for('menu') }}" method="post">
+    <a><button class="buttons" role="button" name='menu_selection' value="mbf">Morning Breakfast</button></a>
+  </form>
+  <form action="{{ url_for('menu') }}" method="post">
+    <a><button class="buttons" role="button" name='menu_selection' value="ebf">Evening Breakfast</button></a>
+  </form>
+  <form action="{{ url_for('menu') }}" method="post">
+    <a><button class="buttons" role="button" name='menu_selection' value="dinner">Dinner</button></a>
+  </form>
+  <form action="{{ url_for('menu') }}" method="post">
+    <a><button class="buttons" role="button" name='menu_selection' value="lunch">Lunch</button></a>
+  </form>
+</div>
+
+
+
+  <form action="{{ url_for('menu') }}" method="post">
+
+  <div class="menu" style="
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+">
+    <div class="meal">
+
+      <div class="items">
+        <!-- Meal items go here -->
+        {% for menu in menu_selections %}
+        <div class="item">
+          <img src="data:image/jpeg;base64,{{ menu.dishpicture|b64encode }}" alt="{{menu.dishName}}">
+          <div class="item-info">
+            <div class="item-name">{{menu.dishName}}  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;   &#8377;{{menu.price}}</div>
+<!--            <input name="prices" value="{{menu.price}}">-->
+            <div class="item-checkbox">
+              <input type="checkbox" name="item" id="checkbox{{ menu.id }}" value="{{menu_cat}}">
+              <input type="checkbox" id="checkboxHidden{{ menu.id }}" name="prices" value="{{menu.price}}"  style="display: none;">
+              <div class="item-quantity">
+                <label>Quantity:</label>
+                <input type="number" name="quantity" min="1" id="quantityInput" max="4" class="quantity-input">
+              </div>
+            </div>
+          </div>
+        </div>
+          <script>
+      $(document).ready(function() {
+        $('#checkbox{{ menu.id }}').change(function() {
+          if ($(this).is(':checked')) {
+            $('#checkboxHidden{{ menu.id }}').prop('checked', true);
+          }
+        });
+      });
+    </script>
+        {% endfor%}
+      </div>
+    </div>
+  </div>
+  <div class="done-button" style="margin-top: 0px;">
+    <button type="submit">Done</button>
+  </div>
+
+  </form>
+
+
+
+
+</body>
+</html>
+
+

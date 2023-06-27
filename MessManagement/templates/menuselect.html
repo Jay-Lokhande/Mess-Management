@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    .card {
+  max-width: 400px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.greeting {
+  font-size: 18px;
+  color: #555;
+}
+
+.order-details {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.order-details h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.order-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-details li {
+  margin-bottom: 5px;
+}
+
+</style>
+<body>
+
+
+<div class="card">
+  <div class="header">
+    <h2>Thank you for your order!</h2>
+    <p class="greeting">We hope you enjoy your purchase!</p>
+  </div>
+  <div class="order-details">
+    <h3>Order Details</h3>
+
+    <ul>
+{% for item in items %}
+
+
+<p>{{item}}</p>
+<p>{{quantity}}</p>
+ {% endfor%}
+
+    </ul>
+  </div>
+</div>
+
+
+
+</body>
+</html>

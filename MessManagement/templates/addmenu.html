@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+/* Set background color or image */
+body {
+  background-color: #f2f2f2;
+}
+
+/* Center the form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the label */
+label {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Style the select dropdown */
+select,
+input[type="text"] {
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 18px;
+}
+
+/* Style the file input */
+input[type="file"] {
+  margin-bottom: 20px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <form action="{{ url_for('addmenu') }}" method="post" enctype="multipart/form-data">
+          <label for="mealcategory">Choose a Meal Type:</label>
+  <select name="mealcategory" id="mealcategory">
+                    <option value="all">Select Meal Category</option>
+
+      <option value="mbf">Morning Breakfast</option>
+      <option value="dinner">Dinner</option>
+      <option value="lunch">Lunch</option>
+    <option value="ebf">Evening Breakfast</option>
+  </select>
+        <input type="text" name="dishname" placeholder="DISH Name" required="required"/>
+        <input type="text" name="price" placeholder="Price" required="required"/>
+        <input type="file" name="file" required="required"/>
+        <button type="submit">Done</button>
+    </form>
+
+</body>
+</html>
+
+

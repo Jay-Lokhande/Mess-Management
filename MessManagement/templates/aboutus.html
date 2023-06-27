@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+      /* Navbar styles */
+.navbar {
+  background-color: #2b2d42;
+  color: #fff;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #FFC107;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+</style>
+<body>
+ <div class="navbar">
+    <ul>
+      <li><a href="{{url_for('menu')}}">Home</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="{{url_for('get_bill')}}">Get Bill</a></li>
+      <li><a href="{{url_for('about_us')}}">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+<div class="container">
+  <h1>About Us</h1>
+  <p>
+    Our mess management app is designed to simplify the process of meal management for users,
+    providing them with easy access to today's meals and detailed information about breakfast,
+    lunch, and dinner options. With the ability to select quantities for each meal and generate
+    bills on a monthly or daily basis, our app streamlines the mess management experience.
+  </p>
+
+  <h2>Key Features of Our Mess Management App:</h2>
+  <ul>
+    <li>Daily Meal Overview: Users can quickly view today's meals and their contents.</li>
+    <li>Detailed Meal Information: Users have access to a comprehensive list of items included
+      in breakfast, lunch, and dinner.</li>
+    <li>Quantity Selection: Users can customize their meals by selecting the quantity of each item.</li>
+    <li>Pricing Information: Up-to-date pricing details are provided for transparency in meal costs.</li>
+    <li>Monthly Billing: Users can generate bills to view their total monthly expenses.</li>
+    <li>Daily Billing: Bills can be generated for specific days, facilitating daily expense tracking.</li>
+  </ul>
+
+  <p>
+    By leveraging the power of Flask, our mess management app ensures a user-friendly and intuitive
+    experience. We strive to simplify the process of meal management, providing users with convenient
+    access to meal information, customization options, and hassle-free bill generation.
+  </p>
+
+  <p>
+    Join us on this journey towards efficient and transparent mess management.
+    Download our Flask-based mess management app today and experience the ease of organizing your
+    meals and tracking your expenses like never before.
+  </p>
+</div>
+
+</body>
+</html>
